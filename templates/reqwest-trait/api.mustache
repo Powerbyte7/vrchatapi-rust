@@ -169,7 +169,7 @@ impl {{classname}} for {{classname}}Client {
 
         let local_var_client = &local_var_configuration.client;
 
-        let local_var_uri_str = format!("{}{{{path}}}", local_var_configuration.base_path{{#pathParams}}, {{{baseName}}}={{#isString}}crate::apis::urlencode({{/isString}}{{{paramName}}}{{^required}}.unwrap(){{/required}}{{#required}}{{#isNullable}}.unwrap(){{/isNullable}}{{/required}}{{#isArray}}.join(",").as_ref(){{/isArray}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}.to_string(){{/isContainer}}{{/isPrimitiveType}}{{/isUuid}}{{/isString}}{{#isString}}){{/isString}}{{/pathParams}});
+        let local_var_uri_str = format!("{}{{{path}}}", local_var_configuration.base_path{{#pathParams}}, {{{baseName}}}={{#isString}}{{^vendorExtensions.x-vrc-no-encoding}} crate::apis::urlencode({{/vendorExtensions.x-vrc-no-encoding}}{{/isString}}{{{paramName}}}{{^required}}.unwrap(){{/required}}{{#required}}{{#isNullable}}.unwrap(){{/isNullable}}{{/required}}{{#isArray}}.join(",").as_ref(){{/isArray}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}.to_string(){{/isContainer}}{{/isPrimitiveType}}{{/isUuid}}{{/isString}}{{#isString}}{{^vendorExtensions.x-vrc-no-encoding}})({{/vendorExtensions.x-vrc-no-encoding}}{{/isString}}{{/pathParams}});
         let mut local_var_req_builder = local_var_client.request(reqwest::Method::{{{httpMethod}}}, local_var_uri_str.as_str());
 
         {{#queryParams}}

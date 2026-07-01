@@ -72,7 +72,7 @@ pub async fn close_instance(
         "{}/instances/{worldId}:{instanceId}",
         configuration.base_path,
         worldId = crate::apis::urlencode(p_path_world_id),
-        instanceId = crate::apis::urlencode(p_path_instance_id)
+        instanceId = p_path_instance_id
     );
     let mut req_builder = configuration
         .client
@@ -178,7 +178,7 @@ pub async fn get_instance(
         "{}/instances/{worldId}:{instanceId}",
         configuration.base_path,
         worldId = crate::apis::urlencode(p_path_world_id),
-        instanceId = crate::apis::urlencode(p_path_instance_id)
+        instanceId = p_path_instance_id
     );
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
@@ -329,7 +329,7 @@ pub async fn get_short_name(
         "{}/instances/{worldId}:{instanceId}/shortName",
         configuration.base_path,
         worldId = crate::apis::urlencode(p_path_world_id),
-        instanceId = crate::apis::urlencode(p_path_instance_id)
+        instanceId = p_path_instance_id
     );
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
